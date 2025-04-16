@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,672;1,672&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background: url('arkaplan.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  position: relative;
+  text-align: center;
+  backdrop-filter: brightness(0.95);
+}
+
+h1 {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+
+.plate-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plate-img {
+  width: 550px;
+  height: auto;
+  z-index: 1;
+}
+
+#plateInput {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: "Montserrat", sans-serif;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  color: #1a2a3a;
+  text-align: center;
+  width: 70%;
+  z-index: 2;
+}
+
+#plateInput:focus {
+  outline: none;
+}
+
+.buy-btn {
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  padding: 14px 30px;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(to right, #1e2a3a, #2b3e50);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.buy-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  opacity: 0.6;
+  transform: skewX(-20deg);
+}
+
+.buy-btn:hover {
+  transform: scale(1.03);
+}
+
+.buy-btn:hover::before {
+  left: 100%;
+  transition: left 0.8s ease-in-out;
+}
+
+
+.info-box {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  font-family: "Montserrat", sans-serif;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0.9;
+  max-width: 500px;
+  line-height: 1.5;
+  z-index: 1;
+}
+
+.alert-box {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  z-index: 9999;
+  animation: fadeInOut 3s ease forwards;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
